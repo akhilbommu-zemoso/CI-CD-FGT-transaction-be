@@ -35,7 +35,7 @@ spec:
 	stages{
 		stage('Checkout Source') {
 			steps {
-				git 'https://github.com/akhilbommu-zemoso/CI-CD-FGT-budget-be.git'
+				git 'https://github.com/akhilbommu-zemoso/CI-CD-FGT-transaction-be'
 			}
     		}
 		stage('Build Jar'){
@@ -48,7 +48,7 @@ spec:
 		stage('Build Docker'){
 			steps{
 				container('fgt-docker'){
-					sh 'docker build -t akhilzemoso/be_budget_jenkins:latest .'
+					sh 'docker build -t akhilzemoso/be_transaction_jenkins:latest .'
 					sh 'docker images'
 				}
 			}  
@@ -63,7 +63,7 @@ spec:
 				       	sh 'docker login -u $username -p $password'
 						echo USERNAME
 						echo "username is $USERNAME"
-						sh 'docker push akhilzemoso/be_budget_jenkins:latest'
+						sh 'docker push akhilzemoso/be_transaction_jenkins:latest'
 					    	}	           
 				}
 			}
