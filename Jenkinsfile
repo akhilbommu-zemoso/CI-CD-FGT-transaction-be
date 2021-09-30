@@ -49,7 +49,6 @@ spec:
 			steps{
 				container('fgt-docker'){
 					sh 'docker build -t akhilzemoso/be_transaction_jenkins:latest .'
-					sh 'docker images'
 				}
 			}  
 	    	}
